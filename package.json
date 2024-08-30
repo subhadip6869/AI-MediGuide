@@ -1,0 +1,29 @@
+{
+  "name": "ai-mediguide",
+  "version": "1.0.0",
+  "description": "AI-Powered Medicine Insights at Your Fingertips",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/subhadip6869/AI-MediGuide.git"
+  },
+  "keywords": [
+    "mediguide",
+    "ai-mediguide",
+    "ai"
+  ],
+  "author": "Subhadip Dutta,Kushal Jaiswal,Somshankar Maity",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/subhadip6869/AI-MediGuide/issues"
+  },
+  "homepage": "https://github.com/subhadip6869/AI-MediGuide#readme",
+  "dependencies": {
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2",
+    "hbs": "^4.2.0"
+  }
+}
