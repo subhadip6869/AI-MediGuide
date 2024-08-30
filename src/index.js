@@ -9,6 +9,7 @@ const express = require("express");
 const app = express();
 
 const webRouter = require("./routers/webrouter");
+const apiRouter = require("./routers/apirouter");
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
@@ -19,6 +20,7 @@ app.set("views", path.join(__dirname, "views"));
 hbs.registerPartials(path.join(__dirname, 'views', 'partials'));
 
 app.use("/", webRouter);
+app.use("/api", apiRouter);
 
 app.listen(PORT, () => {
     console.log(`Server running at ${HOST}:${PORT}`);

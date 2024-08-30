@@ -9,6 +9,15 @@
   <link rel="icon" type="image/x-icon" href="data:image/x-icon;base64," />
 
   <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+    integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js"
+    integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy"
+    crossorigin="anonymous"></script>
 </head>
 
 <body>
@@ -57,12 +66,12 @@
                         </path>
                       </svg>
                     </div>
-                    <input placeholder="Search for medicines, vitamins, and more"
+                    <input placeholder="Search for medicines, vitamins, and more" id="textfield"
                       class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-xl text-[#111518] focus:outline-0 focus:ring-0 border border-[#dbe1e6] bg-white focus:border-[#dbe1e6] h-full placeholder:text-[#60778a] px-[15px] rounded-r-none border-r-0 pr-2 rounded-l-none border-l-0 pl-2 text-sm font-normal leading-normal @[480px]:text-base @[480px]:font-normal @[480px]:leading-normal"
-                      value="" />
+                      value="" maxlength="50" />
                     <div
                       class="flex items-center justify-center rounded-r-xl border-l-0 border border-[#dbe1e6] bg-white pr-[7px]">
-                      <button
+                      <button id="find"
                         class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-xl h-10 px-4 @[480px]:h-12 @[480px]:px-5 bg-[#2094f3] text-white text-sm font-bold leading-normal tracking-[0.015em] @[480px]:text-base @[480px]:font-bold @[480px]:leading-normal @[480px]:tracking-[0.015em]">
                         <span class="truncate">Find Medicine</span>
                       </button>
@@ -76,6 +85,39 @@
       </div>
     </div>
   </div>
+
+  <div class="modal fade modal-dialog-scrollable" id="medicineOutputModal" tabindex="-1"
+    aria-labelledby="medicineOutputModalLabel" aria-hidden="true">
+    <div class="modal-dialog container">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="medicineOutputModalLabel">Search Results</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <table class="table table-striped table-bordered table-sm table-hover">
+            {{!-- <tr>
+              <th>Name</th>
+              <th>Manufacturer</th>
+              <th>Ingredient</th>
+              <th>Usage</th>
+              <th>Side Effects</th>
+              <th>Precautions</th>
+              <th>Category</th>
+              <th>Rx/OTC</th>
+            </tr> --}}
+          </table>
+          <p style="display: none;">No results found at this time. Please try again later.</p>
+        </div>
+        {{!-- <div class="modal-footer">
+          {{!-- <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button> --}}
+          {{!-- <button type="button" class="btn btn-primary">Save changes</button> --}}
+        </div> --}}
+      </div>
+    </div>
+  </div>
 </body>
+
+<script src="/js/search.js"></script>
 
 </html>
