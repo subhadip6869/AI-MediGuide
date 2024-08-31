@@ -113,7 +113,7 @@ findBtn.addEventListener("click", async () => {
 				break;
 			} else {
 				console.log(responseData);
-				if (++counter == 5) {
+				if (++counter == 10) {
 					document
 						.querySelector("#medicineOutputModal table")
 						.replaceChildren();
