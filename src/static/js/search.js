@@ -5,6 +5,12 @@ const btnLoader = document.querySelector(".loader");
 const host = window.location.hostname;
 const port = window.location.port;
 
+function createElementWithText(tag, text) {
+	const element = document.createElement(tag);
+	element.innerHTML = text;
+	return element;
+}
+
 findBtn.addEventListener("click", async () => {
 	let counter = 0;
 	if (!inputField.value) return;
@@ -38,32 +44,24 @@ findBtn.addEventListener("click", async () => {
 
 				// adding table headers
 				let headerRow = document.createElement("tr");
-				let th = document.createElement("th");
-				th.innerHTML = "NAME";
-				headerRow.appendChild(th);
-				th = document.createElement("th");
-				th.innerHTML = "MANUFACTURER";
-				headerRow.appendChild(th);
-				th = document.createElement("th");
-				th.innerHTML = "INGREDIENT";
-				headerRow.appendChild(th);
-				th = document.createElement("th");
-				th.innerHTML = "USAGE";
-				headerRow.appendChild(th);
-				th = document.createElement("th");
-				th.innerHTML = "SIDE EFFECT";
-				headerRow.appendChild(th);
-				th = document.createElement("th");
-				th.innerHTML = "PRECAUTION";
-				headerRow.appendChild(th);
-				th = document.createElement("th");
-				th.innerHTML = "CATEGORY";
-				headerRow.appendChild(th);
-				th = document.createElement("th");
-				th.innerHTML = "Rx/OTC";
-				headerRow.appendChild(th);
+				headerRow.classList.add("bg-slate-300");
+
+				// adding heading labels
+				for (
+					let i = 0;
+					i < Object.keys(responseData.data[0]).length - 1;
+					i++
+				) {
+					let th = createElementWithText(
+						"th",
+						Object.keys(responseData.data[0])[i].replace("_", " ")
+					);
+					th.classList.add("p-2.5", "border", "border-slate-700");
+					headerRow.appendChild(th);
+				}
 
 				table.appendChild(headerRow);
+				// end of adding table headers
 
 				let data = responseData.data;
 
@@ -75,39 +73,32 @@ findBtn.addEventListener("click", async () => {
 
 					const trow = document.createElement("tr");
 
-					let td = document.createElement("td");
-					td.innerHTML = data[i]["NAME"];
-					trow.appendChild(td);
-
-					td = document.createElement("td");
-					td.innerHTML = data[i]["MANUFACTURER"];
-					trow.appendChild(td);
-
-					td = document.createElement("td");
-					td.innerHTML = data[i]["INGREDIENT"];
-					trow.appendChild(td);
-
-					td = document.createElement("td");
-					td.innerHTML = data[i]["USAGE"];
-					trow.appendChild(td);
-
-					td = document.createElement("td");
-					td.innerHTML = data[i]["SIDE_EFFECT"];
-					trow.appendChild(td);
-
-					td = document.createElement("td");
-					td.innerHTML = data[i]["PRECAUTION"];
-					trow.appendChild(td);
-
-					td = document.createElement("td");
-					td.innerHTML = data[i]["CATEGORY"];
-					trow.appendChild(td);
-
-					td = document.createElement("td");
-					td.innerHTML = data[i]["PRESCRIPTION_REQUIRED"]
-						? "Rx"
-						: "OTC";
-					trow.appendChild(td);
+					let keys = Object.keys(data[i]);
+					for (let j = 0; j < keys.length - 1; j++) {
+						if (keys[j] === "PRESCRIPTION_REQUIRED") {
+							let td = createElementWithText(
+								"td",
+								data[i][keys[j]] ? "Rx" : "OTC"
+							);
+							td.classList.add(
+								"p-2.5",
+								"border",
+								"border-slate-700"
+							);
+							trow.appendChild(td);
+						} else {
+							let td = createElementWithText(
+								"td",
+								data[i][keys[j]]
+							);
+							td.classList.add(
+								"p-2.5",
+								"border",
+								"border-slate-700"
+							);
+							trow.appendChild(td);
+						}
+					}
 
 					table.appendChild(trow);
 				}
