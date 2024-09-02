@@ -7,6 +7,7 @@
 
   <title>MediGuide-AI</title>
   <link rel="icon" type="image/x-icon" href="data:image/x-icon;base64," />
+  <link rel="stylesheet" href="/css/search.css">
 
   <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
 
@@ -54,7 +55,7 @@
                   class="text-white text-4xl font-black leading-tight tracking-[-0.033em] @[480px]:text-5xl @[480px]:font-black @[480px]:leading-tight @[480px]:tracking-[-0.033em] text-center">
                   Access AI-Powered Medicine Information Instantly
                 </h1>
-                <label class="flex flex-col min-w-40 h-14 w-full max-w-[480px] @[480px]:h-16">
+                <label class="flex flex-col min-w-40 h-14 w-full max-w-[600px]">
                   <div class="flex w-full flex-1 items-stretch rounded-xl h-full">
                     <div
                       class="text-[#60778a] flex border border-[#dbe1e6] bg-white items-center justify-center pl-[15px] rounded-l-xl border-r-0"
@@ -66,14 +67,15 @@
                         </path>
                       </svg>
                     </div>
-                    <input placeholder="Search for medicines, vitamins, and more" id="textfield"
+                    <input placeholder="Search for multiple medicines or ingredients" id="textfield"
                       class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-xl text-[#111518] focus:outline-0 focus:ring-0 border border-[#dbe1e6] bg-white focus:border-[#dbe1e6] h-full placeholder:text-[#60778a] px-[15px] rounded-r-none border-r-0 pr-2 rounded-l-none border-l-0 pl-2 text-sm font-normal leading-normal @[480px]:text-base @[480px]:font-normal @[480px]:leading-normal"
                       value="" maxlength="100" />
                     <div
                       class="flex items-center justify-center rounded-r-xl border-l-0 border border-[#dbe1e6] bg-white pr-[7px]">
                       <button id="find"
                         class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-xl h-10 px-4 @[480px]:h-12 @[480px]:px-5 bg-[#2094f3] text-white text-sm font-bold leading-normal tracking-[0.015em] @[480px]:text-base @[480px]:font-bold @[480px]:leading-normal @[480px]:tracking-[0.015em]">
-                        <span class="truncate">Find Medicine</span>
+                        <span class="truncate btn-text">Find Medicine</span>
+                        <span class="loader"></span>
                       </button>
                     </div>
                   </div>

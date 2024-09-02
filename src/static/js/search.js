@@ -1,13 +1,17 @@
 const findBtn = document.querySelector("#find");
 const inputField = document.querySelector("#textfield");
+const btnText = document.querySelector(".btn-text");
+const btnLoader = document.querySelector(".loader");
 const host = window.location.hostname;
 const port = window.location.port;
 
 findBtn.addEventListener("click", async () => {
 	let counter = 0;
 	if (!inputField.value) return;
-    const errorMsgElem = document.querySelector("#medicineOutputModal p");
-    errorMsgElem.style.display = "none";
+	const errorMsgElem = document.querySelector("#medicineOutputModal p");
+	errorMsgElem.style.display = "none";
+	btnLoader.style.display = "block";
+	btnText.style.display = "none";
 	while (true) {
 		try {
 			let res = await fetch(`http://${host}:${port}/api/info`, {
@@ -117,7 +121,7 @@ findBtn.addEventListener("click", async () => {
 					document
 						.querySelector("#medicineOutputModal table")
 						.replaceChildren();
-                        errorMsgElem.style.display = "block";
+					errorMsgElem.style.display = "block";
 					let modal = new bootstrap.Modal(
 						document.getElementById("medicineOutputModal")
 					);
@@ -128,6 +132,9 @@ findBtn.addEventListener("click", async () => {
 			}
 		} catch (e) {
 			console.log(e);
+		} finally {
+			btnText.style.display = "block";
+			btnLoader.style.display = "none";
 		}
 	}
 });
