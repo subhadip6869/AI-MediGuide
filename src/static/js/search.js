@@ -4,6 +4,9 @@ const btnText = document.querySelector(".btn-text");
 const btnLoader = document.querySelector(".loader");
 const host = window.location.hostname;
 const port = window.location.port;
+const protocol = window.location.protocol;
+
+console.log(protocol, host, port);
 
 function createElementWithText(tag, text) {
 	const element = document.createElement(tag);
@@ -20,7 +23,7 @@ findBtn.addEventListener("click", async () => {
 	btnText.style.display = "none";
 	while (true) {
 		try {
-			let res = await fetch(`http://${host}:${port}/api/info`, {
+			let res = await fetch(`${protocol}//${host}:${port}/api/info`, {
 				method: "POST",
 				headers: {
 					"Content-Type": "application/json",
