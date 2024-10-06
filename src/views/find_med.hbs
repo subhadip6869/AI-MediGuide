@@ -79,6 +79,18 @@
             {{!-- Recent Searches --}}
             <div class="recents pt-2 mx-40 max-lg:mx-30 max-md:mx-20 max-sm:mx-9">
                 <h3 class="text-lg font-bold">Recent Searches</h3>
+                <div class="recent-keywords flex flex-wrap gap-2"></div>
+            </div>
+
+            {{!-- Landing Text --}}
+            <div class="landing-text w-full flex-grow flex flex-col items-center justify-center">
+                <img src="/images/medical.svg" alt="" class="w-20 max-md:w-16 max-sm:w-12">
+                <p class="w-1/3 max-md:w-2/3 max-sm:w-3/4 text-center text-gray-400">Welcome to MedSearch, your
+                    comprehensive medicine information
+                    portal. Begin your
+                    journey to better
+                    health by searching for detailed medicine profiles, usage guidelines, and safety precautions. Simply
+                    enter a medicine name, ingredient, or manufacturer in the search box above to get started.</p>
             </div>
 
             {{!-- Loader Area --}}
@@ -93,13 +105,13 @@
 
     <div id="myModal"
         class="modal fixed top-0 left-0 w-full h-full flex items-center justify-center backdrop-blur-sm bg-[#00000066]">
-        <div class="modal-content bg-white w-4/5 p-4 rounded-xl">
+        <div class="modal-content bg-white w-4/5 h-4/5 p-4 rounded-xl flex flex-col">
             <div class="close-area flex justify-between">
                 <p></p>
                 <span class="close text-[#aaa] hover:text-[#888] text-3xl font-bold cursor-pointer">&times;</span>
             </div>
             <p class="content">Modal content...</p>
-            <div class="modal-details"></div>
+            <div class="modal-details overflow-y-auto"></div>
         </div>
     </div>
 </body>
