@@ -2,9 +2,10 @@
     height: 30px;
     width: 30px;
     border-radius: 50%;
+    border-width: 3px;
     border-top-color: rgb(107 114 128);
     border-right-color: rgb(107 114 128);
-    border-left-color: rgba(107, 114, 128, 0);
+    border-left-color: rgba(107, 114, 128, 1);
     border-bottom-color: rgba(107, 114, 128, 0);
     animation: spin 1s linear infinite;
     /* display: none; */
