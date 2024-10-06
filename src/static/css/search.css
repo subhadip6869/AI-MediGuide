@@ -1,20 +1,21 @@
 .loader {
-    height: 25px;
-    width: 25px;
+    height: 30px;
+    width: 30px;
     border-radius: 50%;
-    border-top: 3px solid white;
-    border-left: 3px solid white;
-    border-right: 3px solid #ffffff00;
-    border-bottom: 3px solid #ffffff00;
+    border-top-color: rgb(107 114 128);
+    border-right-color: rgb(107 114 128);
+    border-left-color: rgba(107, 114, 128, 0);
+    border-bottom-color: rgba(107, 114, 128, 0);
     animation: spin 1s linear infinite;
-    display: none;
-    position: absolute;
+    /* display: none; */
+    /* position: absolute; */
 }
 
 @keyframes spin {
     from {
         transform: rotate(0deg);
     }
+
     to {
         transform: rotate(360deg);
     }

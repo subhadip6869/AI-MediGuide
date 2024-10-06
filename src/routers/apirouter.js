@@ -23,10 +23,10 @@ const safetySettings = [
 		category: HarmCategory.HARM_CATEGORY_DANGEROUS_CONTENT,
 		threshold: HarmBlockThreshold.BLOCK_NONE
 	},
-	{
-		category: HarmCategory.HARM_CATEGORY_VIOLENCE,
-		threshold: HarmBlockThreshold.BLOCK_NONE
-	}
+	// {
+	// 	category: HarmCategory.HARM_CATEGORY_VIOLENCE,
+	// 	threshold: HarmBlockThreshold.BLOCK_NONE
+	// }
 ]
 const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash" });
 
@@ -71,7 +71,10 @@ router.post("/info", async (req, res) => {
 				});
 			}
 		}
+		// console.log(resFormatted);
+
 	} catch (error) {
+		// console.log(error);
 		res.status(400).json({
 			status: 400,
 			message: error.message,
