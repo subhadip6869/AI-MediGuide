@@ -7,6 +7,10 @@ router.get("/", (req, res) => {
 
 router.get("/find", (req, res) => {
     res.render("find_med");
-})
+});
+
+router.get("/symptoms", (req, res) => {
+    res.render("find_symptoms");
+});
 
 module.exports = router;
