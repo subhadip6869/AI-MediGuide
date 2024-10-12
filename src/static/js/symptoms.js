@@ -4,7 +4,7 @@ const protocol = window.location.protocol;
 
 console.log(protocol, host, port);
 
-const selectedSympList = [];
+let selectedSympList = [];
 
 function selectionPillIcon() {
     return `<div class="selected-heading bg-green-500 rounded-xl px-3 py-2 w-fit text-sm m-1"><i
@@ -18,9 +18,10 @@ function availablePill({ name }) {
 }
 
 function onSelectionPillClick(pill) {
-    $(".symptoms-available").append(availablePill({ name: pill.textContent }));
+    const name = pill.textContent.trim();
+    $(".symptoms-available").append(availablePill({ name: name }));
     pill.remove();
-    selectedSympList.pop();
+    selectedSympList = selectedSympList.filter(e => e != name);
 }
 
 function onAvailablePillClick(pill) {
