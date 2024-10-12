@@ -8,14 +8,19 @@
 
     {{> search_cdn }}
 
+    {{!-- Static CSS --}}
+    <link rel="stylesheet" href="/css/search.css">
+
 </head>
 
-<body>
-    <div class="relative flex flex-col min-h-screen size-full bg-white overflow-x-hidden">
+<body style='font-family: Manrope, "Noto Sans", sans-serif;'>
+    <div class="relative flex flex-col min-h-screen size-full bg-white overflow-x-hidden"
+        style='font-family: Manrope, "Noto Sans", sans-serif;'>
         {{> search_header }}
 
         {{!-- Page Content --}}
-        <h2 class="text-2xl pt-10 font-bold self-center text-center">Find the right medicine for your symptoms</h2>
+        <h2 class="text-2xl pt-10 font-bold self-center text-center mx-40 max-lg:mx-30 max-md:mx-20 max-sm:mx-9">Find
+            the right medicine for your symptoms</h2>
 
         {{!-- Search Area --}}
         <div class="flex my-3 mx-40 max-lg:mx-30 max-md:mx-20 max-sm:mx-9">
@@ -24,6 +29,9 @@
             <i class="bi bi-arrow-right px-2.5 py-2 text-white font-bold bg-gray-500 rounded-tr-xl rounded-br-xl cursor-pointer flex items-center"
                 id="search"></i>
         </div>
+
+        {{!-- Available Search Symptoms --}}
+        <h3 class="text-lg font-bold mx-40 max-lg:mx-30 max-md:mx-20 max-sm:mx-9">Choose common symptoms</h3>
         <div class="symptoms-available flex flex-wrap gap-2 mx-40 max-lg:mx-30 max-md:mx-20 max-sm:mx-9">
             {{#each available}}
             <div class="availale-pill bg-gray-100 rounded-xl px-3 py-2 h-fit m-1 w-fit text-sm cursor-pointer"
@@ -31,6 +39,17 @@
             </div>
             {{/each}}
         </div>
+
+        {{!-- Loader Area --}}
+        <div class="loader-container w-full flex-grow flex items-center justify-center">
+            <div class="loader"></div>
+        </div>
+
+        {{!-- Results Area --}}
+        <div class="results pt-4 mx-40 max-lg:mx-30 max-md:mx-20 max-sm:mx-9">
+
+        </div>
+
     </div>
     {{> search_footer}}
 </body>

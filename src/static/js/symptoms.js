@@ -1,3 +1,9 @@
+const host = window.location.hostname;
+const port = window.location.port;
+const protocol = window.location.protocol;
+
+console.log(protocol, host, port);
+
 const selectedSympList = [];
 
 function selectionPillIcon() {
@@ -34,10 +40,61 @@ function clearSelectionArea() {
     $(".selection-box").append(selectionPillIcon());
 }
 
+function createResultContainer({ name, brand, symptoms, purpose }) {
+    return `<div class="result flex items-center justify-between border-2 border-gray-100 rounded-xl p-2 my-1">
+                <div class="info flex flex-col">
+                    <h3 class="text-lg font-bold">${name}</h3>
+                    <p class="text-sm text-gray-400">${brand}</p>
+                    <p class="text-sm"><b>Use for:</b> ${symptoms.join(", ")}</p>
+                    <div class="flex flex-col mt-2">
+                        ${purpose.map(p => `<p class="text-sm"><i class="bi bi-shield-check"></i> ${p}</p>`).join("")}
+                    </div>
+                </div>
+            </div>`;
+}
+
+
+$('.loader-container').hide();
+
 $(document).ready(() => {
     clearSelectionArea();
 
     $("#search").on('click', () => {
-        
+        if (selectedSympList.length > 0) {
+            $('.loader-container').fadeIn(200);
+            fetch(`${protocol}//${host}:${port}/api/symptom`, {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify({
+                    symptoms: selectedSympList
+                })
+            })
+                .then(resp => resp.json())
+                .then(data => {
+                    if (data.status === 200) {
+                        $(".results").empty();
+                        const respData = data.data;
+                        for (let i = 0; i < respData.length; i++) {
+                            $(".results").append(createResultContainer({
+                                name: respData[i].name,
+                                brand: respData[i].brand,
+                                symptoms: respData[i].symptoms,
+                                purpose: respData[i].purpose
+                            }));
+                        }
+                    } else {
+                        alert(data.message);
+                    }
+                })
+                .catch(err => {
+                    console.log(err);
+                    alert("Something went wrong");
+                })
+                .finally(() => {
+                    $('.loader-container').fadeOut(200);
+                });
+        }
     })
 })
