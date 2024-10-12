@@ -17,9 +17,24 @@
         {{!-- Page Content --}}
         <h2 class="text-2xl pt-10 font-bold self-center text-center">Find the right medicine for your symptoms</h2>
 
-
+        {{!-- Search Area --}}
+        <div class="flex my-3 mx-40 max-lg:mx-30 max-md:mx-20 max-sm:mx-9">
+            <div class="selection-box items-center flex flex-wrap flex-grow border-2 rounded-tl-xl rounded-bl-xl">
+            </div>
+            <i class="bi bi-arrow-right px-2.5 py-2 text-white font-bold bg-gray-500 rounded-tr-xl rounded-br-xl cursor-pointer flex items-center"
+                id="search"></i>
+        </div>
+        <div class="symptoms-available flex flex-wrap gap-2 mx-40 max-lg:mx-30 max-md:mx-20 max-sm:mx-9">
+            {{#each available}}
+            <div class="availale-pill bg-gray-100 rounded-xl px-3 py-2 h-fit m-1 w-fit text-sm cursor-pointer"
+                onclick="onAvailablePillClick(this)">{{name}}
+            </div>
+            {{/each}}
+        </div>
     </div>
     {{> search_footer}}
 </body>
+
+<script src="/js/symptoms.js"></script>
 
 </html>

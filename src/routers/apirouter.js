@@ -1,6 +1,8 @@
 const { GoogleGenerativeAI, HarmCategory, HarmBlockThreshold } = require("@google/generative-ai");
 const express = require("express");
 const router = express.Router();
+const path = require("path");
+const fs = require("fs");
 
 const genAI = new GoogleGenerativeAI(process.env.GEMINI_KEY);
 const geminiConfig = {
@@ -78,6 +80,64 @@ router.post("/info", async (req, res) => {
 		res.status(400).json({
 			status: 400,
 			message: error.message,
+		});
+	}
+});
+
+router.get("/symptom", async (req, res) => {
+	try {
+		const symptomJson = JSON.parse(fs.readFileSync(path.join(__dirname, "model", "symptoms.json"), "utf-8"));
+		const sympList = [];
+		for (let s of symptomJson["symptoms"]) {
+			sympList.push(s["name"]);
+		}
+		res.status(200).json({
+			status: 200,
+			data: sympList
+		})
+	} catch (e) {
+		res.status(500).json({
+			status: 500,
+			message: e.message
+		});
+	}
+})
+
+router.post("/symptom", async (req, res) => {
+	try {
+		const symptomJson = JSON.parse(fs.readFileSync(path.join(__dirname, "model", "symptoms.json"), "utf-8"));
+		const { symptoms } = req.body;
+		// get only the matched symptoms data
+		const selected = symptomJson["symptoms"].filter(s => symptoms.includes(s["name"]));
+		// flatten the data to have symptoms with each medicine object
+		const flattenedList = selected.flatMap(symp => symp.medicines.map(med => ({
+			symptom: symp["name"],
+			...med
+		})));
+		// merge if a medicine is used for multiple symptoms & purposes
+		const mergedMeds = new Map();
+		for (let med of flattenedList) {
+			if (mergedMeds.has(med.name)) {
+				mergedMeds.get(med.name).symptoms.push(med.symptom);
+				mergedMeds.get(med.name).purpose.push(med.purpose);
+			} else {
+				mergedMeds.set(med.name, {
+					name: med.name,
+					brand: med.brand,
+					symptoms: [med.symptom],
+					purpose: [med.purpose]
+				});
+			}
+		}
+
+		res.status(200).json({
+			status: 200,
+			data: Array.from(mergedMeds.values())
+		});
+	} catch (e) {
+		res.status(500).json({
+			status: 500,
+			message: e.message
 		});
 	}
 });
