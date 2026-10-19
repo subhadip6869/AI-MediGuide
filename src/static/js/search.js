@@ -6,11 +6,24 @@ console.log(protocol, host, port);
 
 // Links container
 function createLinksContainer({ url, title }) {
-	return `<a href="${url}" target="_blank" class="text-blue-500 hover:text-blue-700 hover:underline">${title ? title : url}</a>`
+	return `<a href="${url}" target="_blank" class="text-blue-500 hover:text-blue-700 hover:underline">${title ? title : url}</a>`;
 }
 
 // details view inside the modal
-function createDetailsResponse({ name, manufacturer, productForm, ingredients, usage, sideEffect, precaution, category, prescriptionRequired, productUrls, imageUrl, invalidMessage }) {
+function createDetailsResponse({
+	name,
+	manufacturer,
+	productForm,
+	ingredients,
+	usage,
+	sideEffect,
+	precaution,
+	category,
+	prescriptionRequired,
+	productUrls,
+	imageUrl,
+	invalidMessage,
+}) {
 	return `<div class="flex flex-col">
 				<h1 class="font-bold text-3xl">${name}</h1>
 
@@ -33,16 +46,26 @@ function createDetailsResponse({ name, manufacturer, productForm, ingredients, u
 				<div class="section my-2">
 					<p class="font-bold">Where I can order?</p>
 					<div class="flex flex-wrap gap-2">
-					${productUrls.length > 0
-			? productUrls.map(url => createLinksContainer({ url: url, title: new URL(url).hostname })).join('')
-			: "Not available"}
+					${
+						productUrls.length > 0
+							? productUrls
+									.map((url) =>
+										createLinksContainer({
+											url: url,
+											title: new URL(url).hostname,
+										}),
+									)
+									.join("")
+							: "Not available"
+					}
 					</div>
 				</div>
 			</div>`;
 }
 
 // runs when "View Details" button is clicked, it passes the necessary data and generates the details view for the model
-function onDetailsClick({ name,
+function onDetailsClick({
+	name,
 	manufacturer,
 	productForm,
 	ingredients,
@@ -53,7 +76,8 @@ function onDetailsClick({ name,
 	prescriptionRequired,
 	productUrls,
 	imageUrl,
-	invalidMessage }) {
+	invalidMessage,
+}) {
 	showModalDetails({
 		element: createDetailsResponse({
 			name,
@@ -67,13 +91,14 @@ function onDetailsClick({ name,
 			prescriptionRequired,
 			productUrls: productUrls.split(","),
 			imageUrl,
-			invalidMessage
-		})
+			invalidMessage,
+		}),
 	});
 }
 
 // medicine overview cards after search is complete
-function createResultContainer({ name,
+function createResultContainer({
+	name,
 	manufacturer,
 	productForm,
 	ingredients,
@@ -84,7 +109,8 @@ function createResultContainer({ name,
 	prescriptionRequired,
 	productUrls,
 	imageUrl,
-	invalidMessage }) {
+	invalidMessage,
+}) {
 	return `<div
 				class="results-container flex items-center justify-between border-2 border-gray-100 rounded-xl p-2 my-1">
 				<div class="infos flex flex-col">
@@ -110,7 +136,7 @@ function createResultContainer({ name,
 					</button>
 				</div>
 				<div class="image">
-					<img src="${imageUrl ? imageUrl : '/images/default.jpg'}" class="w-40" alt="">
+					<img src="${imageUrl ? imageUrl : "/images/default.jpg"}" class="w-40" alt="">
 				</div>
 			</div>`;
 }
@@ -144,7 +170,6 @@ function hideModal() {
 	$("#myModal .modal-details").empty();
 	$("#myModal").fadeOut(300);
 }
-
 
 // hides modal when page is loading for first time
 $("#myModal").hide(0);
@@ -194,8 +219,7 @@ function onRecentPillClick({ keyword }) {
 }
 
 $(document).ready(() => {
-
-	$('.loader-container').hide();
+	$(".loader-container").hide();
 	for (let key of getRecentSearches()) {
 		$(".recent-keywords").append(createRecentSearchPill({ keyword: key }));
 	}
@@ -208,27 +232,32 @@ $(document).ready(() => {
 			storeRecentSearches({ keyword: inputText });
 			$(".recent-keywords").empty();
 			for (let key of getRecentSearches()) {
-				$(".recent-keywords").append(createRecentSearchPill({ keyword: key }));
+				$(".recent-keywords").append(
+					createRecentSearchPill({ keyword: key }),
+				);
 			}
 
 			console.log(`Searching with: ${inputText}`);
-			$('.landing-text').hide();
-			$('.loader-container').fadeIn(200);
+			$(".landing-text").hide();
+			$(".loader-container").fadeIn(200);
 
 			try {
 				let count = 10;
 				while (count > 0) {
 					console.log(`Attempt left: ${count}`);
 
-					let res = await fetch(`${protocol}//${host}:${port}/api/info`, {
-						method: "POST",
-						headers: {
-							"Content-Type": "application/json",
+					let res = await fetch(
+						`${protocol}//${host}:${port}/api/info`,
+						{
+							method: "POST",
+							headers: {
+								"Content-Type": "application/json",
+							},
+							body: JSON.stringify({
+								medicines: inputText,
+							}),
 						},
-						body: JSON.stringify({
-							medicines: inputText,
-						}),
-					});
+					);
 
 					let responseData = await res.json();
 					if (responseData.status === 200) {
@@ -238,20 +267,23 @@ $(document).ready(() => {
 						$(".results").empty();
 
 						for (let i = 0; i < data.length; i++) {
-							$(".results").append(createResultContainer({
-								name: data[i].NAME,
-								manufacturer: data[i].MANUFACTURER,
-								productForm: data[i].PRODUCT_FORM,
-								ingredients: data[i].INGREDIENT,
-								usage: data[i].USAGE,
-								sideEffect: data[i].SIDE_EFFECT,
-								precaution: data[i].PRECAUTION,
-								category: data[i].CATEGORY,
-								prescriptionRequired: data[i].PRESCRIPTION_REQUIRED,
-								productUrls: data[i].PRODUCT_URL,
-								imageUrl: "",
-								invalidMessage: data[i].INVALID_MESSAGE,
-							}));
+							$(".results").append(
+								createResultContainer({
+									name: data[i].NAME,
+									manufacturer: data[i].MANUFACTURER,
+									productForm: data[i].PRODUCT_FORM,
+									ingredients: data[i].INGREDIENT,
+									usage: data[i].USAGE,
+									sideEffect: data[i].SIDE_EFFECT,
+									precaution: data[i].PRECAUTION,
+									category: data[i].CATEGORY,
+									prescriptionRequired:
+										data[i].PRESCRIPTION_REQUIRED,
+									productUrls: data[i].PRODUCT_URL,
+									imageUrl: "",
+									invalidMessage: data[i].INVALID_MESSAGE,
+								}),
+							);
 						}
 						break;
 					}
@@ -264,7 +296,7 @@ $(document).ready(() => {
 			} catch (e) {
 				showModal({ message: "Something went wrong" });
 			} finally {
-				$('.loader-container').fadeOut(200);
+				$(".loader-container").fadeOut(200);
 			}
 		}
 	});
