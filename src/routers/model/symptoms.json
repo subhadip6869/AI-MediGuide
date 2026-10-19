@@ -1,0 +1,727 @@
+{
+    "symptoms": [
+        {
+            "name": "Fever",
+            "medicines": [
+                {
+                    "name": "Paracetamol",
+                    "brand": "Tylenol",
+                    "purpose": "Reduces fever and mild pain"
+                },
+                {
+                    "name": "Ibuprofen",
+                    "brand": "Advil",
+                    "purpose": "Reduces fever, inflammation, and pain"
+                }
+            ]
+        },
+        {
+            "name": "Cough",
+            "medicines": [
+                {
+                    "name": "Dextromethorphan",
+                    "brand": "Robitussin",
+                    "purpose": "Cough suppressant"
+                },
+                {
+                    "name": "Guaifenesin",
+                    "brand": "Mucinex",
+                    "purpose": "Expectorant, loosens mucus"
+                }
+            ]
+        },
+        {
+            "name": "Headache",
+            "medicines": [
+                {
+                    "name": "Aspirin",
+                    "brand": "Bayer",
+                    "purpose": "Reduces pain, inflammation, and fever"
+                },
+                {
+                    "name": "Ibuprofen",
+                    "brand": "Advil",
+                    "purpose": "Relieves pain and reduces inflammation"
+                }
+            ]
+        },
+        {
+            "name": "Stomach Pain",
+            "medicines": [
+                {
+                    "name": "Omeprazole",
+                    "brand": "Prilosec",
+                    "purpose": "Reduces stomach acid"
+                },
+                {
+                    "name": "Simethicone",
+                    "brand": "Gas-X",
+                    "purpose": "Relieves gas and bloating"
+                }
+            ]
+        },
+        {
+            "name": "Runny Nose",
+            "medicines": [
+                {
+                    "name": "Cetirizine",
+                    "brand": "Zyrtec",
+                    "purpose": "Allergy relief"
+                },
+                {
+                    "name": "Loratadine",
+                    "brand": "Claritin",
+                    "purpose": "Allergy relief"
+                }
+            ]
+        },
+        {
+            "name": "Heartburn",
+            "medicines": [
+                {
+                    "name": "Calcium Carbonate",
+                    "brand": "Tums",
+                    "purpose": "Neutralizes stomach acid"
+                },
+                {
+                    "name": "Ranitidine",
+                    "brand": "Zantac",
+                    "purpose": "Reduces acid production"
+                }
+            ]
+        },
+        {
+            "name": "Nausea",
+            "medicines": [
+                {
+                    "name": "Dimenhydrinate",
+                    "brand": "Dramamine",
+                    "purpose": "Prevents nausea and motion sickness"
+                },
+                {
+                    "name": "Ondansetron",
+                    "brand": "Zofran",
+                    "purpose": "Prevents nausea"
+                }
+            ]
+        },
+        {
+            "name": "Sore Throat",
+            "medicines": [
+                {
+                    "name": "Lozenges",
+                    "brand": "Halls",
+                    "purpose": "Soothes throat irritation"
+                },
+                {
+                    "name": "Ibuprofen",
+                    "brand": "Advil",
+                    "purpose": "Reduces throat inflammation"
+                }
+            ]
+        },
+        {
+            "name": "Vomiting",
+            "medicines": [
+                {
+                    "name": "Ondansetron",
+                    "brand": "Zofran",
+                    "purpose": "Prevents nausea and vomiting"
+                },
+                {
+                    "name": "Domperidone",
+                    "brand": "Motilium",
+                    "purpose": "Prevents nausea and vomiting"
+                }
+            ]
+        },
+        {
+            "name": "Dehydration",
+            "medicines": [
+                {
+                    "name": "Oral Rehydration Salts (ORS)",
+                    "brand": "Pedialyte",
+                    "purpose": "Replenishes lost fluids and electrolytes"
+                },
+                {
+                    "name": "Electrolyte Powder",
+                    "brand": "Electral",
+                    "purpose": "Replenishes fluids and electrolytes"
+                }
+            ]
+        },
+        {
+            "name": "Loose Motion",
+            "medicines": [
+                {
+                    "name": "Loperamide",
+                    "brand": "Imodium",
+                    "purpose": "Reduces diarrhea"
+                },
+                {
+                    "name": "Oral Rehydration Salts (ORS)",
+                    "brand": "Pedialyte",
+                    "purpose": "Prevents dehydration due to diarrhea"
+                }
+            ]
+        }
+    ],
+    "medicines": [
+        {
+            "NAME": "Paracetamol",
+            "MANUFACTURER": "Tylenol",
+            "INGREDIENT": [
+                "Paracetamol (Acetaminophen)"
+            ],
+            "USAGE": "Reduces fever and mild pain",
+            "SIDE_EFFECT": "Nausea, vomiting, rash",
+            "PRECAUTION": "Avoid overdose; consult a doctor if using for more than 10 days.",
+            "CATEGORY": "Analgesic/Antipyretic",
+            "PRESCRIPTION_REQUIRED": false,
+            "PRODUCT_URL": [
+                "https://www.walmart.com/search/?query=Paracetamol",
+                "https://www.cvs.com/search?q=Paracetamol",
+                "https://www.riteaid.com/search?q=Paracetamol"
+            ],
+            "IMAGE_URL": "https://www.example.com/image/paracetamol.jpg",
+            "INVALID_MESSAGE": ""
+        },
+        {
+            "NAME": "Ibuprofen",
+            "MANUFACTURER": "Advil",
+            "INGREDIENT": [
+                "Ibuprofen"
+            ],
+            "USAGE": "Reduces fever, inflammation, and pain",
+            "SIDE_EFFECT": "Stomach upset, headache, dizziness",
+            "PRECAUTION": "Avoid use in patients with active gastrointestinal bleeding.",
+            "CATEGORY": "NSAID",
+            "PRESCRIPTION_REQUIRED": false,
+            "PRODUCT_URL": [
+                "https://www.walmart.com/search/?query=Ibuprofen",
+                "https://www.cvs.com/search?q=Ibuprofen",
+                "https://www.riteaid.com/search?q=Ibuprofen"
+            ],
+            "IMAGE_URL": "https://www.example.com/image/ibuprofen.jpg",
+            "INVALID_MESSAGE": ""
+        },
+        {
+            "NAME": "Dextromethorphan",
+            "MANUFACTURER": "Robitussin",
+            "INGREDIENT": [
+                "Dextromethorphan Hydrobromide"
+            ],
+            "USAGE": "Cough suppressant",
+            "SIDE_EFFECT": "Dizziness, nausea, drowsiness",
+            "PRECAUTION": "Avoid alcohol; consult a doctor if cough lasts more than 7 days.",
+            "CATEGORY": "Cough Suppressant",
+            "PRESCRIPTION_REQUIRED": false,
+            "PRODUCT_URL": [
+                "https://www.walmart.com/search/?query=Dextromethorphan",
+                "https://www.cvs.com/search?q=Dextromethorphan",
+                "https://www.riteaid.com/search?q=Dextromethorphan"
+            ],
+            "IMAGE_URL": "https://www.example.com/image/dextromethorphan.jpg",
+            "INVALID_MESSAGE": ""
+        },
+        {
+            "NAME": "Guaifenesin",
+            "MANUFACTURER": "Mucinex",
+            "INGREDIENT": [
+                "Guaifenesin"
+            ],
+            "USAGE": "Expectorant, loosens mucus",
+            "SIDE_EFFECT": "Nausea, vomiting, headache",
+            "PRECAUTION": "Stay hydrated while taking this medication.",
+            "CATEGORY": "Expectorant",
+            "PRESCRIPTION_REQUIRED": false,
+            "PRODUCT_URL": [
+                "https://www.walmart.com/search/?query=Guaifenesin",
+                "https://www.cvs.com/search?q=Guaifenesin",
+                "https://www.riteaid.com/search?q=Guaifenesin"
+            ],
+            "IMAGE_URL": "https://www.example.com/image/guaifenesin.jpg",
+            "INVALID_MESSAGE": ""
+        },
+        {
+            "NAME": "Aspirin",
+            "MANUFACTURER": "Bayer",
+            "INGREDIENT": [
+                "Aspirin (Acetylsalicylic Acid)"
+            ],
+            "USAGE": "Reduces pain, inflammation, and fever",
+            "SIDE_EFFECT": "Stomach upset, bleeding, allergic reactions",
+            "PRECAUTION": "Do not use in children with viral infections.",
+            "CATEGORY": "NSAID",
+            "PRESCRIPTION_REQUIRED": false,
+            "PRODUCT_URL": [
+                "https://www.walmart.com/search/?query=Aspirin",
+                "https://www.cvs.com/search?q=Aspirin",
+                "https://www.riteaid.com/search?q=Aspirin"
+            ],
+            "IMAGE_URL": "https://www.example.com/image/aspirin.jpg",
+            "INVALID_MESSAGE": ""
+        },
+        {
+            "NAME": "Omeprazole",
+            "MANUFACTURER": "Prilosec",
+            "INGREDIENT": [
+                "Omeprazole"
+            ],
+            "USAGE": "Reduces stomach acid",
+            "SIDE_EFFECT": "Headache, nausea, diarrhea",
+            "PRECAUTION": "Consult a doctor if symptoms persist after 14 days.",
+            "CATEGORY": "Proton Pump Inhibitor",
+            "PRESCRIPTION_REQUIRED": false,
+            "PRODUCT_URL": [
+                "https://www.walmart.com/search/?query=Omeprazole",
+                "https://www.cvs.com/search?q=Omeprazole",
+                "https://www.riteaid.com/search?q=Omeprazole"
+            ],
+            "IMAGE_URL": "https://www.example.com/image/omeprazole.jpg",
+            "INVALID_MESSAGE": ""
+        },
+        {
+            "NAME": "Simethicone",
+            "MANUFACTURER": "Gas-X",
+            "INGREDIENT": [
+                "Simethicone"
+            ],
+            "USAGE": "Relieves gas and bloating",
+            "SIDE_EFFECT": "Rarely causes nausea or diarrhea",
+            "PRECAUTION": "Consult a doctor if symptoms persist.",
+            "CATEGORY": "Antigas",
+            "PRESCRIPTION_REQUIRED": false,
+            "PRODUCT_URL": [
+                "https://www.walmart.com/search/?query=Simethicone",
+                "https://www.cvs.com/search?q=Simethicone",
+                "https://www.riteaid.com/search?q=Simethicone"
+            ],
+            "IMAGE_URL": "https://www.example.com/image/simethicone.jpg",
+            "INVALID_MESSAGE": ""
+        },
+        {
+            "NAME": "Cetirizine",
+            "MANUFACTURER": "Zyrtec",
+            "INGREDIENT": [
+                "Cetirizine Hydrochloride"
+            ],
+            "USAGE": "Allergy relief",
+            "SIDE_EFFECT": "Drowsiness, dry mouth, headache",
+            "PRECAUTION": "Avoid alcohol; may cause drowsiness.",
+            "CATEGORY": "Antihistamine",
+            "PRESCRIPTION_REQUIRED": false,
+            "PRODUCT_URL": [
+                "https://www.walmart.com/search/?query=Cetirizine",
+                "https://www.cvs.com/search?q=Cetirizine",
+                "https://www.riteaid.com/search?q=Cetirizine"
+            ],
+            "IMAGE_URL": "https://www.example.com/image/cetirizine.jpg",
+            "INVALID_MESSAGE": ""
+        },
+        {
+            "NAME": "Loratadine",
+            "MANUFACTURER": "Claritin",
+            "INGREDIENT": [
+                "Loratadine"
+            ],
+            "USAGE": "Allergy relief",
+            "SIDE_EFFECT": "Headache, drowsiness, fatigue",
+            "PRECAUTION": "Avoid alcohol; consult a doctor if symptoms persist.",
+            "CATEGORY": "Antihistamine",
+            "PRESCRIPTION_REQUIRED": false,
+            "PRODUCT_URL": [
+                "https://www.walmart.com/search/?query=Loratadine",
+                "https://www.cvs.com/search?q=Loratadine",
+                "https://www.riteaid.com/search?q=Loratadine"
+            ],
+            "IMAGE_URL": "https://www.example.com/image/loratadine.jpg",
+            "INVALID_MESSAGE": ""
+        },
+        {
+            "NAME": "Calcium Carbonate",
+            "MANUFACTURER": "Tums",
+            "INGREDIENT": [
+                "Calcium Carbonate"
+            ],
+            "USAGE": "Neutralizes stomach acid",
+            "SIDE_EFFECT": "Constipation, gas, belching",
+            "PRECAUTION": "Consult a doctor if symptoms persist.",
+            "CATEGORY": "Antacid",
+            "PRESCRIPTION_REQUIRED": false,
+            "PRODUCT_URL": [
+                "https://www.walmart.com/search/?query=Calcium%20Carbonate",
+                "https://www.cvs.com/search?q=Calcium%20Carbonate",
+                "https://www.riteaid.com/search?q=Calcium%20Carbonate"
+            ],
+            "IMAGE_URL": "https://www.example.com/image/calcium_carbonate.jpg",
+            "INVALID_MESSAGE": ""
+        },
+        {
+            "NAME": "Ranitidine",
+            "MANUFACTURER": "Zantac",
+            "INGREDIENT": [
+                "Ranitidine"
+            ],
+            "USAGE": "Reduces acid production",
+            "SIDE_EFFECT": "Headache, constipation, nausea",
+            "PRECAUTION": "Consult a doctor if symptoms persist.",
+            "CATEGORY": "H2 Antagonist",
+            "PRESCRIPTION_REQUIRED": false,
+            "PRODUCT_URL": [
+                "https://www.walmart.com/search/?query=Ranitidine",
+                "https://www.cvs.com/search?q=Ranitidine",
+                "https://www.riteaid.com/search?q=Ranitidine"
+            ],
+            "IMAGE_URL": "https://www.example.com/image/ranitidine.jpg",
+            "INVALID_MESSAGE": ""
+        },
+        {
+            "NAME": "Dimenhydrinate",
+            "MANUFACTURER": "Dramamine",
+            "INGREDIENT": [
+                "Dimenhydrinate"
+            ],
+            "USAGE": "Prevents nausea and motion sickness",
+            "SIDE_EFFECT": "Drowsiness, dizziness, dry mouth",
+            "PRECAUTION": "Avoid alcohol; may cause drowsiness.",
+            "CATEGORY": "Antihistamine",
+            "PRESCRIPTION_REQUIRED": false,
+            "PRODUCT_URL": [
+                "https://www.walmart.com/search/?query=Dimenhydrinate",
+                "https://www.cvs.com/search?q=Dimenhydrinate",
+                "https://www.riteaid.com/search?q=Dimenhydrinate"
+            ],
+            "IMAGE_URL": "https://www.example.com/image/dimenhydrinate.jpg",
+            "INVALID_MESSAGE": ""
+        },
+        {
+            "NAME": "Ondansetron",
+            "MANUFACTURER": "Zofran",
+            "INGREDIENT": [
+                "Ondansetron"
+            ],
+            "USAGE": "Prevents nausea",
+            "SIDE_EFFECT": "Headache, constipation, fatigue",
+            "PRECAUTION": "Consult a doctor if symptoms persist.",
+            "CATEGORY": "Antiemetic",
+            "PRESCRIPTION_REQUIRED": true,
+            "PRODUCT_URL": [
+                "https://www.walmart.com/search/?query=Ondansetron",
+                "https://www.cvs.com/search?q=Ondansetron",
+                "https://www.riteaid.com/search?q=Ondansetron"
+            ],
+            "IMAGE_URL": "https://www.example.com/image/ondansetron.jpg",
+            "INVALID_MESSAGE": ""
+        },
+        {
+            "NAME": "Domperidone",
+            "MANUFACTURER": "Motilium",
+            "INGREDIENT": [
+                "Domperidone"
+            ],
+            "USAGE": "Prevents nausea and vomiting",
+            "SIDE_EFFECT": "Dry mouth, headache, dizziness",
+            "PRECAUTION": "Consult a doctor if symptoms persist.",
+            "CATEGORY": "Antiemetic",
+            "PRESCRIPTION_REQUIRED": true,
+            "PRODUCT_URL": [
+                "https://www.walmart.com/search/?query=Domperidone",
+                "https://www.cvs.com/search?q=Domperidone",
+                "https://www.riteaid.com/search?q=Domperidone"
+            ],
+            "IMAGE_URL": "https://www.example.com/image/domperidone.jpg",
+            "INVALID_MESSAGE": ""
+        },
+        {
+            "NAME": "Oral Rehydration Salts (ORS)",
+            "MANUFACTURER": "Pedialyte",
+            "INGREDIENT": [
+                "Sodium Chloride",
+                "Potassium Chloride",
+                "Glucose"
+            ],
+            "USAGE": "Replenishes lost fluids and electrolytes",
+            "SIDE_EFFECT": "Nausea, vomiting, diarrhea (rare)",
+            "PRECAUTION": "Consult a doctor if symptoms persist.",
+            "CATEGORY": "Electrolyte Solution",
+            "PRESCRIPTION_REQUIRED": false,
+            "PRODUCT_URL": [
+                "https://www.walmart.com/search/?query=Oral%20Rehydration%20Salts",
+                "https://www.cvs.com/search?q=Oral%20Rehydration%20Salts",
+                "https://www.riteaid.com/search?q=Oral%20Rehydration%20Salts"
+            ],
+            "IMAGE_URL": "https://www.example.com/image/ors.jpg",
+            "INVALID_MESSAGE": ""
+        },
+        {
+            "NAME": "Electrolyte Powder",
+            "MANUFACTURER": "Electral",
+            "INGREDIENT": [
+                "Sodium",
+                "Potassium",
+                "Chloride",
+                "Glucose"
+            ],
+            "USAGE": "Replenishes fluids and electrolytes",
+            "SIDE_EFFECT": "Nausea, stomach upset (rare)",
+            "PRECAUTION": "Consult a doctor if symptoms persist.",
+            "CATEGORY": "Electrolyte Solution",
+            "PRESCRIPTION_REQUIRED": false,
+            "PRODUCT_URL": [
+                "https://www.walmart.com/search/?query=Electrolyte%20Powder",
+                "https://www.cvs.com/search?q=Electrolyte%20Powder",
+                "https://www.riteaid.com/search?q=Electrolyte%20Powder"
+            ],
+            "IMAGE_URL": "https://www.example.com/image/electrolyte_powder.jpg",
+            "INVALID_MESSAGE": ""
+        },
+        {
+            "NAME": "Loperamide",
+            "MANUFACTURER": "Imodium",
+            "INGREDIENT": [
+                "Loperamide"
+            ],
+            "USAGE": "Reduces diarrhea",
+            "SIDE_EFFECT": "Constipation, dizziness, nausea",
+            "PRECAUTION": "Consult a doctor if symptoms persist.",
+            "CATEGORY": "Antidiarrheal",
+            "PRESCRIPTION_REQUIRED": false,
+            "PRODUCT_URL": [
+                "https://www.walmart.com/search/?query=Loperamide",
+                "https://www.cvs.com/search?q=Loperamide",
+                "https://www.riteaid.com/search?q=Loperamide"
+            ],
+            "IMAGE_URL": "https://www.example.com/image/loperamide.jpg",
+            "INVALID_MESSAGE": ""
+        },
+        {
+            "NAME": "Bismuth Subsalicylate",
+            "MANUFACTURER": "Pepto-Bismol",
+            "INGREDIENT": [
+                "Bismuth Subsalicylate"
+            ],
+            "USAGE": "Relieves upset stomach and diarrhea",
+            "SIDE_EFFECT": "Black stool, constipation",
+            "PRECAUTION": "Consult a doctor if symptoms persist.",
+            "CATEGORY": "Antidiarrheal",
+            "PRESCRIPTION_REQUIRED": false,
+            "PRODUCT_URL": [
+                "https://www.walmart.com/search/?query=Bismuth%20Subsalicylate",
+                "https://www.cvs.com/search?q=Bismuth%20Subsalicylate",
+                "https://www.riteaid.com/search?q=Bismuth%20Subsalicylate"
+            ],
+            "IMAGE_URL": "https://www.example.com/image/bismuth_subsalicylate.jpg",
+            "INVALID_MESSAGE": ""
+        },
+        {
+            "NAME": "Dexamethasone",
+            "MANUFACTURER": "Decadron",
+            "INGREDIENT": [
+                "Dexamethasone"
+            ],
+            "USAGE": "Reduces inflammation",
+            "SIDE_EFFECT": "Nausea, vomiting, dizziness",
+            "PRECAUTION": "Consult a doctor if symptoms persist.",
+            "CATEGORY": "Corticosteroid",
+            "PRESCRIPTION_REQUIRED": true,
+            "PRODUCT_URL": [
+                "https://www.walmart.com/search/?query=Dexamethasone",
+                "https://www.cvs.com/search?q=Dexamethasone",
+                "https://www.riteaid.com/search?q=Dexamethasone"
+            ],
+            "IMAGE_URL": "https://www.example.com/image/dexamethasone.jpg",
+            "INVALID_MESSAGE": ""
+        },
+        {
+            "NAME": "Acetaminophen",
+            "MANUFACTURER": "Tylenol",
+            "INGREDIENT": [
+                "Acetaminophen"
+            ],
+            "USAGE": "Pain relief, fever reducer",
+            "SIDE_EFFECT": "Nausea, liver damage (overdose)",
+            "PRECAUTION": "Do not exceed recommended dose.",
+            "CATEGORY": "Analgesic",
+            "PRESCRIPTION_REQUIRED": false,
+            "PRODUCT_URL": [
+                "https://www.walmart.com/search/?query=Acetaminophen",
+                "https://www.cvs.com/search?q=Acetaminophen",
+                "https://www.riteaid.com/search?q=Acetaminophen"
+            ],
+            "IMAGE_URL": "https://www.example.com/image/acetoaminophen.jpg",
+            "INVALID_MESSAGE": ""
+        },
+        {
+            "NAME": "Ibuprofen",
+            "MANUFACTURER": "Advil",
+            "INGREDIENT": [
+                "Ibuprofen"
+            ],
+            "USAGE": "Pain relief, reduces inflammation",
+            "SIDE_EFFECT": "Nausea, dizziness, stomach upset",
+            "PRECAUTION": "Consult a doctor if symptoms persist.",
+            "CATEGORY": "NSAID",
+            "PRESCRIPTION_REQUIRED": false,
+            "PRODUCT_URL": [
+                "https://www.walmart.com/search/?query=Ibuprofen",
+                "https://www.cvs.com/search?q=Ibuprofen",
+                "https://www.riteaid.com/search?q=Ibuprofen"
+            ],
+            "IMAGE_URL": "https://www.example.com/image/ibuprofen.jpg",
+            "INVALID_MESSAGE": ""
+        },
+        {
+            "NAME": "Aspirin",
+            "MANUFACTURER": "Bayer",
+            "INGREDIENT": [
+                "Aspirin"
+            ],
+            "USAGE": "Pain relief, anti-inflammatory",
+            "SIDE_EFFECT": "Nausea, stomach upset, bleeding",
+            "PRECAUTION": "Consult a doctor if symptoms persist.",
+            "CATEGORY": "NSAID",
+            "PRESCRIPTION_REQUIRED": false,
+            "PRODUCT_URL": [
+                "https://www.walmart.com/search/?query=Aspirin",
+                "https://www.cvs.com/search?q=Aspirin",
+                "https://www.riteaid.com/search?q=Aspirin"
+            ],
+            "IMAGE_URL": "https://www.example.com/image/aspirin.jpg",
+            "INVALID_MESSAGE": ""
+        },
+        {
+            "NAME": "Gabapentin",
+            "MANUFACTURER": "Neurontin",
+            "INGREDIENT": [
+                "Gabapentin"
+            ],
+            "USAGE": "Treats nerve pain, seizures",
+            "SIDE_EFFECT": "Dizziness, fatigue, drowsiness",
+            "PRECAUTION": "Consult a doctor if symptoms persist.",
+            "CATEGORY": "Anticonvulsant",
+            "PRESCRIPTION_REQUIRED": true,
+            "PRODUCT_URL": [
+                "https://www.walmart.com/search/?query=Gabapentin",
+                "https://www.cvs.com/search?q=Gabapentin",
+                "https://www.riteaid.com/search?q=Gabapentin"
+            ],
+            "IMAGE_URL": "https://www.example.com/image/gabapentin.jpg",
+            "INVALID_MESSAGE": ""
+        },
+        {
+            "NAME": "Tramadol",
+            "MANUFACTURER": "Ultram",
+            "INGREDIENT": [
+                "Tramadol"
+            ],
+            "USAGE": "Pain relief",
+            "SIDE_EFFECT": "Dizziness, drowsiness, nausea",
+            "PRECAUTION": "Consult a doctor if symptoms persist.",
+            "CATEGORY": "Opioid",
+            "PRESCRIPTION_REQUIRED": true,
+            "PRODUCT_URL": [
+                "https://www.walmart.com/search/?query=Tramadol",
+                "https://www.cvs.com/search?q=Tramadol",
+                "https://www.riteaid.com/search?q=Tramadol"
+            ],
+            "IMAGE_URL": "https://www.example.com/image/tramadol.jpg",
+            "INVALID_MESSAGE": ""
+        },
+        {
+            "NAME": "Meloxicam",
+            "MANUFACTURER": "Mobic",
+            "INGREDIENT": [
+                "Meloxicam"
+            ],
+            "USAGE": "Pain relief, anti-inflammatory",
+            "SIDE_EFFECT": "Nausea, dizziness, stomach upset",
+            "PRECAUTION": "Consult a doctor if symptoms persist.",
+            "CATEGORY": "NSAID",
+            "PRESCRIPTION_REQUIRED": true,
+            "PRODUCT_URL": [
+                "https://www.walmart.com/search/?query=Meloxicam",
+                "https://www.cvs.com/search?q=Meloxicam",
+                "https://www.riteaid.com/search?q=Meloxicam"
+            ],
+            "IMAGE_URL": "https://www.example.com/image/meloxicam.jpg",
+            "INVALID_MESSAGE": ""
+        },
+        {
+            "NAME": "Oxycodone",
+            "MANUFACTURER": "OxyContin",
+            "INGREDIENT": [
+                "Oxycodone"
+            ],
+            "USAGE": "Pain relief",
+            "SIDE_EFFECT": "Dizziness, drowsiness, nausea",
+            "PRECAUTION": "Consult a doctor if symptoms persist.",
+            "CATEGORY": "Opioid",
+            "PRESCRIPTION_REQUIRED": true,
+            "PRODUCT_URL": [
+                "https://www.walmart.com/search/?query=Oxycodone",
+                "https://www.cvs.com/search?q=Oxycodone",
+                "https://www.riteaid.com/search?q=Oxycodone"
+            ],
+            "IMAGE_URL": "https://www.example.com/image/oxycodone.jpg",
+            "INVALID_MESSAGE": ""
+        },
+        {
+            "NAME": "Amoxicillin",
+            "MANUFACTURER": "Amoxil",
+            "INGREDIENT": [
+                "Amoxicillin"
+            ],
+            "USAGE": "Treats bacterial infections",
+            "SIDE_EFFECT": "Nausea, diarrhea, rash",
+            "PRECAUTION": "Consult a doctor if symptoms persist.",
+            "CATEGORY": "Antibiotic",
+            "PRESCRIPTION_REQUIRED": true,
+            "PRODUCT_URL": [
+                "https://www.walmart.com/search/?query=Amoxicillin",
+                "https://www.cvs.com/search?q=Amoxicillin",
+                "https://www.riteaid.com/search?q=Amoxicillin"
+            ],
+            "IMAGE_URL": "https://www.example.com/image/amoxicillin.jpg",
+            "INVALID_MESSAGE": ""
+        },
+        {
+            "NAME": "Metformin",
+            "MANUFACTURER": "Glucophage",
+            "INGREDIENT": [
+                "Metformin"
+            ],
+            "USAGE": "Controls blood sugar levels",
+            "SIDE_EFFECT": "Nausea, diarrhea, stomach upset",
+            "PRECAUTION": "Consult a doctor if symptoms persist.",
+            "CATEGORY": "Antidiabetic",
+            "PRESCRIPTION_REQUIRED": true,
+            "PRODUCT_URL": [
+                "https://www.walmart.com/search/?query=Metformin",
+                "https://www.cvs.com/search?q=Metformin",
+                "https://www.riteaid.com/search?q=Metformin"
+            ],
+            "IMAGE_URL": "https://www.example.com/image/metformin.jpg",
+            "INVALID_MESSAGE": ""
+        },
+        {
+            "NAME": "Atorvastatin",
+            "MANUFACTURER": "Lipitor",
+            "INGREDIENT": [
+                "Atorvastatin"
+            ],
+            "USAGE": "Lowers cholesterol levels",
+            "SIDE_EFFECT": "Muscle pain, liver damage (rare)",
+            "PRECAUTION": "Consult a doctor if symptoms persist.",
+            "CATEGORY": "Statin",
+            "PRESCRIPTION_REQUIRED": true,
+            "PRODUCT_URL": [
+                "https://www.walmart.com/search/?query=Atorvastatin",
+                "https://www.cvs.com/search?q=Atorvastatin",
+                "https: //www.riteaid.com/search?q=Atorvastatin"
+            ],
+            "IMAGE_URL": "https://www.example.com/image/atorvastatin.jpg",
+            "INVALID_MESSAGE": ""
+        }
+    ]
+}
