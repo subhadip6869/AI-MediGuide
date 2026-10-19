@@ -1,36 +1,40 @@
-const { GoogleGenerativeAI, HarmCategory, HarmBlockThreshold } = require("@google/generative-ai");
+const {
+	GoogleGenerativeAI,
+	HarmCategory,
+	HarmBlockThreshold,
+} = require("@google/generative-ai");
 const express = require("express");
 const router = express.Router();
 
 const genAI = new GoogleGenerativeAI(process.env.GEMINI_KEY);
 const geminiConfig = {
-	temperature: 2
-}
+	temperature: 2,
+};
 const safetySettings = [
 	{
 		category: HarmCategory.HARM_CATEGORY_HARASSMENT,
-		threshold: HarmBlockThreshold.BLOCK_NONE
+		threshold: HarmBlockThreshold.BLOCK_NONE,
 	},
 	{
 		category: HarmCategory.HARM_CATEGORY_HATE_SPEECH,
-		threshold: HarmBlockThreshold.BLOCK_NONE
+		threshold: HarmBlockThreshold.BLOCK_NONE,
 	},
 	{
 		category: HarmCategory.HARM_CATEGORY_SEXUALLY_EXPLICIT,
-		threshold: HarmBlockThreshold.BLOCK_NONE
+		threshold: HarmBlockThreshold.BLOCK_NONE,
 	},
 	{
 		category: HarmCategory.HARM_CATEGORY_DANGEROUS_CONTENT,
-		threshold: HarmBlockThreshold.BLOCK_NONE
+		threshold: HarmBlockThreshold.BLOCK_NONE,
 	},
 	// {
 	// 	category: HarmCategory.HARM_CATEGORY_VIOLENCE,
 	// 	threshold: HarmBlockThreshold.BLOCK_NONE
 	// }
-]
-const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash" });
+];
+const model = genAI.getGenerativeModel({ model: process.env.GEMINI_MODEL });
 
-// search information from internet (e.g.: mor.nlm.nih.gov/RxNav/, dailymed.nlm.nih.gov/dailymed/, medicinesdatabase.be/human-use, go.drugbank.com/, drugcentral.org/, www.webmd.com/drugs/2/index, myhealthbox.eu/ etc.) and give stable & valid data. if medicine have multiple ingredients then list out all. 
+// search information from internet (e.g.: mor.nlm.nih.gov/RxNav/, dailymed.nlm.nih.gov/dailymed/, medicinesdatabase.be/human-use, go.drugbank.com/, drugcentral.org/, www.webmd.com/drugs/2/index, myhealthbox.eu/ etc.) and give stable & valid data. if medicine have multiple ingredients then list out all.
 
 // (example: https://www.amazon.com/s?k=, https://www.amazon.in/s?k=, https://www.walmart.com/search/?query=, https://www.walgreens.com/search/results.jsp?Ntt=, cvs, https://www.netmeds.com/catalogsearch/result/$searchKeyword/all, https://pharmeasy.in/search/all?name=, https://www.truemeds.in/search/$searchKeyword etc.)
 
@@ -48,7 +52,11 @@ router.post("/info", async (req, res) => {
     List: [${medicines}]`;
 
 	try {
-		const result = await model.generateContent(prompt, geminiConfig, safetySettings);
+		const result = await model.generateContent(
+			prompt,
+			geminiConfig,
+			safetySettings,
+		);
 		let resultData = result.response.text();
 
 		let resFormatted;
@@ -72,7 +80,6 @@ router.post("/info", async (req, res) => {
 			}
 		}
 		// console.log(resFormatted);
-
 	} catch (error) {
 		// console.log(error);
 		res.status(400).json({
